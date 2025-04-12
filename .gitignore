@@ -1,0 +1,18 @@
+# Node
+node_modules/
+npm-debug.log
+
+# Environment
+.env
+.env.local
+
+# Vite cache
+client/.vite/
+client/dist/
+
+# MongoDB
+data/db/
+
+# IDE
+.vscode/
+.idea/
