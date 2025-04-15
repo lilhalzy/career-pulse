@@ -24,15 +24,16 @@ app.get('/api/test', (req, res) => {
 
 app.get('/api/dbtest', async (req, res) => {
   try {
+    const randomID = Math.floor(Math.random() * 1000)
     const newUser = new User({ 
-      email: 'test@example.com', 
+      email: `test${randomID}@example.com`, 
       password: '123', 
       role: 'job_seeker' 
     });
     await newUser.save();
     res.json({ 
-      message: 'User saved to DB!',
-      userId: newUser._id 
+      message: 'Test user created!',
+      user: { email: newUser.email, id: newUser._id }
     });
   } catch (err) {
     res.status(500).json({ 
